@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WarsawJS Slides: Template</title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Shower Theme -->
+    <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x10.css"/>
+    <link rel="stylesheet" href="vendors/shower-warsawjs/styles/main.css"/>
+
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="vendors/prism/prism.css"/>
+    <link rel="stylesheet" href="modules/custom-prism.css"/>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>WarsawJS Slides: Template</h1>
+        <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
+    </header>
+
+    <section class="slide front-page">
+        <div class="logo">
+            <!-- Logo WarsawJS -->
+            <img src="pictures/logo/warsawjs-logo-light.png">
+        </div>
+        <div class="details">
+            <!-- 1. Avatar -->
+            <img src="pictures/Geekchick_Marty.jpg" alt="Speaker" style="width:282px"/>
+
+            <!-- 2. Speaker -->
+            <h2>Martyna Nowocień</h2>
+
+            <!-- 3. Presentation title -->
+            <h2><strong>"React na start" [PL]</strong></h2>
+
+            <!-- 4. Presentation date -->
+            <h2>2017-03-08</h2>
+
+            <!-- 5. Contact the speaker -->
+            <h2><a href="http://twitter.com/speaker">@Geekchick_Marty</a></h2>
+        </div>
+    </section>
+
+    <section class="slide compact">
+        <h2>
+            <img class="cover" src="pictures/react.png" alt="react logo">
+            React
+        </h2>
+        <ul>
+            <li>javascript library</li>
+            <li class="next">UI</li>
+            <li class="next">V & C from MVC</li>
+            <li class="next">one way data flow</li>
+            <li class="next">izomorphic rendering</li>
+            <li class="next">ignore good practices?</li>
+        </ul>
+    </section>
+
+    <section class="slide prism">
+        <h2>Component example</h2>
+
+        <pre style="font-size: 42px;overflow:hidden;" class="language-javascript line-numbers">
+            <code>
+                class Hello extends React.Component {
+                    render() {
+                        return(
+                            &#60;h1>Hello World&#60;/h1>
+                        )
+                    }
+                }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide prism">
+        <h2>JSX example</h2>
+
+        <pre style="font-size: 28px;overflow:hidden;" class="language-javascript line-numbers">
+            <code>
+                class Hello extends React.Component {
+                    render() {
+                        return(&#60;div>Hello World&#60;/div>)
+                    }
+                }
+                class Hello extends React.Component {
+                    render() {
+                        return React.createElement('div', null, `Hello World`);
+                    }
+                }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact" style="font-size:36px">
+        <br>
+        <ul>
+            <li>
+                angular:
+                &nbsp;
+                <code>
+                    &#60;div ng-repeat='element in list'>
+                </code>
+            </li>
+            <li class="next">
+                ember:
+                &nbsp;
+                <code>
+                    {{#each element in list}}
+                </code>
+            </li>
+            <li class="next">
+                knockout:
+                &nbsp;
+                <code>
+                    data-bind='foreach: list'>
+                </code>
+            </li>
+        </ul>
+        <br>
+        <p class="next">
+            JSX:
+            &nbsp;
+            <code>
+                {list.map(createElementRow)}
+            </code>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Virtual DOM</h2>
+        <figure>
+            <blockquote>
+                <p>
+                    The Virtual DOM is an abstraction of the HTML DOM. It is lightweight and detached from the browser-specific implementation details. Since the DOM itself was already an abstraction, the virtual DOM is, in fact, an abstraction of an abstraction.
+                </p>
+            </blockquote>
+            <figcaption>http://reactkungfu.com/</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <img class="shout grow" src="pictures/meme.jpg" alt="meme">
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/yak.jpg" alt="yak">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="shout shrink" src="pictures/webpack.png" alt="webpack">
+        </figure>
+    </section>
+
+    <section class="slide compact">
+        <h2>
+            Structuring React Projects
+        </h2>
+        <ul>
+            <li>Directory per Concept</li>
+            <li class="next">Directory per Component</li>
+            <li class="next">Directory per View</li>
+        </ul>
+    </section>
+
+    <section class="slide compact" style="line-height:1;">
+        <h2>
+            Directory per Concept
+        </h2>
+        <p class="double" style="line-height:1;">
+            <span>actions</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LaneActions.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NoteActions.js</span><br>
+            <span>components</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editable.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lane.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lanes.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notes.jsx</span><br>
+            <span>constants</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemTypes.js</span><br>
+            <span>index.jsx</span><br>
+            <span>libs</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;persist.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage.js</span><br>
+            <span>main.css</span><br>
+            <span>stores</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LaneStore.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NoteStore.js</span><br>
+        </p>
+    </section>
+
+    <section class="slide compact">
+        <h2>
+            Directory per Component
+        </h2>
+        <p class="double" style="line-height:1;">
+            <span>actions</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LaneActions.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NoteActions.js</span><br>
+            <span>components</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.css</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app_test.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editable</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editable.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editable.css</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editable_test.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>...</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span> constants</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemTypes.js</span><br>
+            <span>index.jsx</span><br>
+            <span>libs</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;persist.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage.js</span><br>
+            <span>main.css</span><br>
+            <span>stores</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LaneStore.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NoteStore.js</span><br>
+        </p>
+    </section>
+
+    <section class="slide compact">
+        <h2>
+            Directory per View
+        </h2>
+        <p class="double" style="line-height:1;">
+            <span>components</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;note.css</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;note_test.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Routes</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Routes.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;routes_test.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>...</span><br>
+            <span>index.jsx</span><br>
+            <span>main.css</span><br>
+            <span>views</span><br>
+            <span>Home</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home.css</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home_test.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>Register</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register.jsx</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.js</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.css</span><br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register_test.jsx</span><br>
+            <span>index.js</span>
+        </p>
+    </section>
+
+    <section class="slide compact">
+        <h2>
+            comparison:
+        </h2>
+        <ul>
+            <li>
+                <a href="https://nafrontendzie.pl/angular-2-vs-react-przyszlosc/?utm_content=bufferdd509&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer">
+                    nafrontendzie.pl/angular-2-vs-react-przyszlosc/?utm_content=bufferdd509&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.scalac.io/2016/02/16/react-vs-angular-2.html">
+                    blog.scalac.io/2016/02/16/react-vs-angular-2.html
+                </a>
+            </li>
+            <li>
+                <a href="http://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-react/">
+                    valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-react/
+                </a>
+            </li>
+            <li>
+                <a href="https://smashingboxes.com/blog/choosing-a-front-end-framework-angular-ember-react/">
+                    smashingboxes.com/blog/choosing-a-front-end-framework-angular-ember-react/
+                </a>
+            </li>
+            <li>
+                <a href="https://app.pluralsight.com/library/courses/react-flux-angular/table-of-contents">
+                    app.pluralsight.com/library/courses/react-flux-angular/table-of-contents
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="slide compact">
+        <h2>
+            base knowledge:
+        </h2>
+        <ul>
+            <li>
+                <a href="https://egghead.io/courses/react-fundamentals">
+                    egghead.io/courses/react-fundamentals
+                </a>
+            </li>
+            <li>
+                <a href="https://app.pluralsight.com/player?course=react-redux-react-router-es6&author=cory-house&name=react-redux-react-router-es6-m1&clip=0&mode=live">
+                    app.pluralsight.com/player?course=react-redux-react-router-es6&author=cory-house&name=react-redux-react-router-es6-m1&clip=0&mode=live
+                </a>
+            </li>
+            <li>
+                <a href="https://app.pluralsight.com/player?course=react-js-getting-started&author=samer-buna&name=react-js-getting-started-m1&clip=0&mode=live">
+                    app.pluralsight.com/player?course=react-js-getting-started&author=samer-buna&name=react-js-getting-started-m1&clip=0&mode=live
+                </a>
+            </li>
+            <li>
+                <a href="https://facebook.github.io/react/tutorial/tutorial.html">
+                    facebook.github.io/react/tutorial/tutorial.html
+                </a>
+            </li>
+            <li>
+                <a href="https://app.pluralsight.com/library/courses/react-flux-building-applications/table-of-contents">
+                    app.pluralsight.com/library/courses/react-flux-building-applications/table-of-contents
+                </a>
+            </li>
+            <li>
+                <a href="https://app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents">
+                    app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/dan_abramov">
+                    @dan_abramov
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="slide compact">
+        <h2>
+            redux:
+        </h2>
+        <ul>
+            <li>
+                <a href="https://egghead.io/courses/getting-started-with-redux">
+                    egghead.io/courses/getting-started-with-redux
+                </a>
+            </li>
+            <li>
+                <a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6#.52xbvr4zc">
+                    code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6#.52xbvr4zc
+                </a>
+
+            </li>
+            <li>
+                <a href="https://github.com/reactjs/redux/tree/master/examples">
+                    github.com/reactjs/redux/tree/master/examples
+                </a>
+
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide compact">
+        <h2>
+            additional sources:
+        </h2>
+        <ul>
+            <li>
+                <a href="https://facebook.github.io/react/">
+                    facebook.github.io/react/
+                </a>
+            </li>
+            <li>
+                <a href="http://reactkungfu.com/">
+                    reactkungfu.com/
+                </a>
+
+            </li>
+            <li>
+                <a href="http://webpack.github.io/docs/">
+                    webpack.github.io/docs/
+                </a>
+            </li>
+            <li>
+                <a href="https://survivejs.com/react/advanced-techniques/structuring-react-projects/">
+                    survivejs.com/react/advanced-techniques/structuring-react-projects/
+                </a>
+            </li>
+            <li>
+                <a href="https://marmelab.com/blog/2015/12/17/react-directory-structure.html">
+                    marmelab.com/blog/2015/12/17/react-directory-structure.html
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <div class="progress"></div>
+
+    <footer class="badge">
+        <a href="https://github.com/warsawjs/warsawjs-slides-template">Fork me on GitHub</a>
+    </footer>
+
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+    <script src="vendors/gamepad/gamepad.js"></script>
+    <script src="vendors/shower/shower.min.js"></script>
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+    <script src="modules/fullscreen.js"></script>
+
+    <!-- Prism.js -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="modules/custom-prism.js"></script>
+</body>
+</html>
